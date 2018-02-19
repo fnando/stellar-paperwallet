@@ -1,0 +1,17 @@
+.steps {
+  counter-reset: step;
+}
+
+.steps section:before {
+  counter-increment: step;
+  content: "STEP #" counter(step);
+  font-weight: 400;
+  color: #999;
+  display: block;
+  font-size: 14px;
+}
+
+.steps h1 {
+  margin-top: 0;
+  font-size: 36px;
+}

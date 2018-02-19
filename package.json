@@ -1,0 +1,28 @@
+{
+  "name": "stellar-paperwallet",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "watch": "parcel watch src/index.html --public-url './' --out-file index.html",
+    "serve": "parcel src/index.html --out-file index.html",
+    "build": "parcel build src/index.html --public-url './' --out-file index.html"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.2",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "eslint": "4.18.0",
+    "eslint-plugin-react": "7.7.0",
+    "node-sass": "4.7.2",
+    "parcel-bundler": "1.6.1",
+    "parcel-plugin-eslint": "1.0.3",
+    "qrcode.react": "0.7.2",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-qr-reader": "2.1.0",
+    "stellar-hd-wallet": "0.0.4",
+    "stellar-sdk": "^0.8.0"
+  }
+}

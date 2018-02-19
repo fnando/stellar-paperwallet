@@ -1,0 +1,36 @@
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 0;
+  border: 2px solid;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+
+  text-transform: uppercase;
+  padding: 15px 30px;
+  cursor: pointer;
+
+  box-shadow: 6px 6px 0 #eee;
+}
+
+.button.primary {
+  border-color: #08b5e5;
+  background: #08b5e5;
+}
+
+.button.secondary {
+  border-color: #08b5e5;
+  color: #08b5e5;
+  background: #fff;
+}
+
+.button[disabled] {
+  border-color: #ccc;
+  background: #ccc;
+  color: #999;
+  cursor: default;
+}
