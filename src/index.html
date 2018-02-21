@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stellar Paperwallet: Make paper wallets to keep your Stellar addresses offline.</title>
-  <script src="./scripts/stellar-paperwallet.jsx"></script>
 </head>
 <body>
   <div class="container">
-    <header class="main-header hide-on-print">
-      <img src="./images/logo.svg" alt="Stellar Paper Wallet">
-      <p>
-        Make paper wallets to keep your Stellar addresses offline.
-      </p>
-    </header>
+    <div id="root">
+      <div class="loading">
+        <div class="center">
+          <img src="./images/logo.svg" alt="Stellar Paperwallet">
+        </div>
 
-    <div id="root"></div>
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script src="./scripts/stellar-paperwallet.jsx"></script>
 </body>
 </html>
