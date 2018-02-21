@@ -5,6 +5,13 @@
 @import "./button";
 @import "./loading";
 @import "./spinner";
+@import "./live_site";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
 
 code {
   font-family: Hack, monospace;
@@ -17,13 +24,11 @@ code {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.4;
+  color: #666;
 
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-
-  color: #666;
-  padding: 50px;
 }
 
 a {
@@ -51,6 +56,7 @@ a {
 }
 
 .container {
+  padding: 50px;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -263,7 +269,7 @@ button + button {
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   body,

@@ -1,0 +1,23 @@
+.live-site {
+  background: rgba(#08b5e5, .2);
+  padding: 20px;
+  margin-bottom: 125px;
+}
+
+.live-site > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.live-site button {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 5px 20px;
+  cursor: pointer;
+  border: 2px solid #08b5e5;
+  background: #fff;
+  color: #08b5e5;
+  box-shadow: 4px 4px rgba(#08b5e5, .4);
+}
