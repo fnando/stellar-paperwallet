@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import QRCode from "qrcode.react";
 
 import PrintButton from "./PrintButton";
+import Key from "./Key";
 import logo from "../../images/logo-print-horizontal.svg";
 
 export default class PublicKeyPrintSheet extends React.Component {
@@ -33,7 +34,7 @@ export default class PublicKeyPrintSheet extends React.Component {
         </p>
 
         <p className="mb0">
-          <code className="black">{publicKey}</code>
+          <Key value={publicKey} />
         </p>
 
         <p className="qrcode">

@@ -57,7 +57,7 @@ export default class InputWord extends React.Component {
 
     return (
       <div>
-        <h2>Word #{position}</h2>
+        <h2>What's the word #{position}?</h2>
 
         <p>
           <input

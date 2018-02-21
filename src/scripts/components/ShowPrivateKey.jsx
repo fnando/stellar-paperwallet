@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import QRCode from "qrcode.react";
 
+import Key from "./Key";
+
 export default class ShowPrivateKey extends React.Component {
   state = {
     showPrivateKey: false
@@ -18,7 +20,9 @@ export default class ShowPrivateKey extends React.Component {
     return (
       <div>
         <h2 className="mb0">Private Key</h2>
-        <p><code>{privateKey}</code></p>
+        <p>
+          <Key value={privateKey} />
+        </p>
 
         <p className="qrcode">
           <QRCode value={privateKey} />

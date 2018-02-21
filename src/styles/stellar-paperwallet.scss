@@ -49,7 +49,7 @@ a {
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -234,5 +234,38 @@ button + button {
     top: 20px;
     right: 20px;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .button + .button {
+    margin-top: 20px;
+  }
+
+  .word-list {
+    display: block;
+  }
+
+  .word-list .column {
+    width: 100%;
+  }
+
+  .camera {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  body,
+  .button {
+    font-size: 14px;
   }
 }
