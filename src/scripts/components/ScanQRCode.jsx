@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import QrReader from "react-qr-reader";
-import {Keypair} from "stellar-sdk";
+import {Keypair} from "stellar-base";
 
 import WalletRestored from "./WalletRestored";
 
