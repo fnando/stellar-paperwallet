@@ -1,5 +1,7 @@
 import React from "react";
+
 import pkg from "../../../package.json";
+import Key from "./Key";
 
 export default class AppFooter extends React.Component {
   render() {
@@ -10,7 +12,7 @@ export default class AppFooter extends React.Component {
         </p>
 
         <p className="wallet-address">
-          <code>GBXPSW6DAQGOZTSKGEZ7SMGABMSUZ24OGX4JOIW4ZYQSII5DNHTN6JDZ</code>
+          <Key value="GBXPSW6DAQGOZTSKGEZ7SMGABMSUZ24OGX4JOIW4ZYQSII5DNHTN6JDZ" />
         </p>
 
         <p className="center">
