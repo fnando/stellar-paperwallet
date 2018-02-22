@@ -6,9 +6,11 @@ import ScanQRCode from "./ScanQRCode";
 import PublicKeyPrintSheet from "./PublicKeyPrintSheet";
 import ShowPrivateKey from "./ShowPrivateKey";
 import MnemonicPrintSheet from "./MnemonicPrintSheet";
+import RestoreFromMnemonic from "./RestoreFromMnemonic";
 
 export default class RestoreWallet extends React.Component {
   state = {
+    currentLanguage: "english",
     mnemonic: [],
     privateKey: null,
     publicKey: null,
@@ -23,6 +25,10 @@ export default class RestoreWallet extends React.Component {
   handleGoToBeginning = () => {
     const {goToScreen} = this.props;
     goToScreen("get-started");
+  };
+
+  handleRestoreFromMnemonic = () => {
+    this.goToScreen("restore-from-mnemonic");
   };
 
   handleEnterWordsManually = () => {
@@ -55,7 +61,7 @@ export default class RestoreWallet extends React.Component {
           </p>
 
           <p>
-            <button className="button primary" onClick={this.handleEnterWordsManually}>Enter words manually</button>
+            <button className="button primary" onClick={this.handleRestoreFromMnemonic}>Enter words manually</button>
           </p>
         </div>
 
@@ -95,11 +101,15 @@ export default class RestoreWallet extends React.Component {
   }
 
   render() {
-    const {screen, publicKey, privateKey, mnemonic} = this.state;
+    const {screen, publicKey, privateKey, mnemonic, currentLanguage} = this.state;
 
     switch (screen) {
+      case "restore-from-mnemonic":
+        return <RestoreFromMnemonic language={currentLanguage} goToScreen={this.goToScreen} />;
+
       case "input-words":
-        return <InputWords goToScreen={this.goToScreen} />;
+        return <InputWords language={currentLanguage} goToScreen={this.goToScreen} />;
+
       case "scan-qrcode":
         return <ScanQRCode goToScreen={this.goToScreen} />;
 
@@ -112,8 +122,10 @@ export default class RestoreWallet extends React.Component {
 
       case "show-private-key":
         return <ShowPrivateKey privateKey={privateKey} goToScreen={this.goToScreen} />;
+
       case "finish":
         return this.finishScreen();
+
       case "splash":
         return this.splashScreen();
     }

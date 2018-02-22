@@ -8,14 +8,12 @@ export default class Key extends React.Component {
 
   render() {
     const {value} = this.props;
-    const matches = value.match(/^(.{14})(.{14})(.{14})(.{14})$/);
+    const matches = value.match(/^(.{28})(.{28})$/);
 
     return (
       <code className="black">
         {matches[1]}<wbr/>
-        {matches[2]}<wbr/>
-        {matches[3]}<wbr/>
-        {matches[4]}
+        {matches[2]}
       </code>
     );
   }

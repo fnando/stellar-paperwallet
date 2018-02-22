@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StellarHDWallet from "stellar-hd-wallet";
-import bip39 from "bip39";
 
 import InputWord from "./InputWord";
 import WalletRestored from "./WalletRestored";
+import {isValidMnemonic, mnemonicJoin} from "../utils/bip39Utils";
 
 export default class InputWords extends React.Component {
   state = {
@@ -14,11 +14,13 @@ export default class InputWords extends React.Component {
   };
 
   static propTypes = {
+    language: PropTypes.string.isRequired,
     goToScreen: PropTypes.func.isRequired
   };
 
-  handleNext = (word) => {
+  handleNext = word => {
     let {mnemonic, index} = this.state;
+    const {language} = this.props;
 
     mnemonic[index] = word;
 
@@ -28,11 +30,10 @@ export default class InputWords extends React.Component {
       return;
     }
 
-    const validMnemonic = bip39.validateMnemonic(mnemonic.join(" "));
     index = 0;
 
-    if (validMnemonic) {
-      const wallet = StellarHDWallet.fromMnemonic(mnemonic.join(" "));
+    if (isValidMnemonic(language, mnemonic)) {
+      const wallet = StellarHDWallet.fromMnemonic(mnemonicJoin(language, mnemonic));
       const privateKey = wallet.getSecret(0);
       const publicKey = wallet.getPublicKey(0);
 
@@ -56,6 +57,7 @@ export default class InputWords extends React.Component {
 
   retrieveWordsScreen() {
     const {mnemonic, index} = this.state;
+    const {language} = this.props;
     const word = mnemonic[index] || "";
 
     return (
@@ -66,7 +68,8 @@ export default class InputWords extends React.Component {
           value={word}
           index={index}
           onNext={this.handleNext}
-          onPrevious={this.handlePrevious} />
+          onPrevious={this.handlePrevious}
+          language={language} />
       </div>
     );
   }

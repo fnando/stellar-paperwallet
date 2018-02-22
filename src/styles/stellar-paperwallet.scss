@@ -245,6 +245,33 @@ button + button {
   }
 }
 
+.flag-button {
+  background: none;
+  border: 2px solid #fff;
+  font-size: 14px;
+  font-family: inherit;
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.flag-button:hover {
+  border-color: #eee;
+}
+
+.flag-button.selected {
+  border-color: #08b5e5;
+  background: rgba(#08b5e5, .05);
+}
+
+.flag-button img {
+  width: 35px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
 @media screen and (max-width: 585px) {
   .button {
     display: block;

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import isValidDictionaryEntry from "../utils/isValidDictionaryEntry";
+import {isValidDictionaryEntry} from "../utils/bip39Utils";
 
 const ENTER = 13;
 
@@ -12,6 +12,7 @@ export default class InputWord extends React.Component {
 
   static propTypes = {
     index: PropTypes.number.isRequired,
+    language: PropTypes.string.isRequired,
     onNext: PropTypes.func.isRequired,
     onPrevious: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired
@@ -30,9 +31,9 @@ export default class InputWord extends React.Component {
 
   handleNext = () => {
     const {value} = this.state;
-    const {onNext} = this.props;
+    const {onNext, language} = this.props;
 
-    if (isValidDictionaryEntry(value)) {
+    if (isValidDictionaryEntry(language, value)) {
       onNext(value);
     }
   };
@@ -50,10 +51,10 @@ export default class InputWord extends React.Component {
 
   render() {
     const {value} = this.state;
-    const {index} = this.props;
+    const {index, language} = this.props;
     const position = index + 1;
     const disablePrevious = index === 0;
-    const disableNext = !isValidDictionaryEntry(value);
+    const disableNext = !isValidDictionaryEntry(language, value);
 
     return (
       <div>

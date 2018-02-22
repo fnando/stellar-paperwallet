@@ -6,26 +6,35 @@ import MnemonicPrintSheet from "./MnemonicPrintSheet";
 import PublicKeyPrintSheet from "./PublicKeyPrintSheet";
 import ShowPrivateKey from "./ShowPrivateKey";
 import ConfirmWords from "./ConfirmWords";
+import LanguageButtons from "./LanguageButtons";
 
 export default class CreateWallet extends React.Component {
   state = {
     screen: "splash",
-    mnemonic: null
+    mnemonic: null,
+    currentLanguage: "english"
   };
 
   static propTypes = {
     goToScreen: PropTypes.func.isRequired
   };
 
-  handleStart = () => {
-    const mnemonicString = StellarHDWallet.generateMnemonic();
-    const mnemonic = mnemonicString.split(" ");
+  generateMnemonic() {
+    const {currentLanguage} = this.state;
+    const mnemonicString = StellarHDWallet.generateMnemonic({language: currentLanguage});
+    const mnemonic = mnemonicString.split(/\s+/);
     const wallet = StellarHDWallet.fromMnemonic(mnemonicString);
     const privateKey = wallet.getSecret(0);
     const publicKey = wallet.getPublicKey(0);
+
+    this.setState({mnemonic, privateKey, publicKey});
+  }
+
+  handleStart = () => {
     const screen = "show-words";
 
-    this.setState({mnemonic, screen, privateKey, publicKey});
+    this.generateMnemonic();
+    this.setState({screen});
   };
 
   handleGoToBeginning = () => {
@@ -33,7 +42,14 @@ export default class CreateWallet extends React.Component {
     goToScreen("get-started");
   };
 
+  handleLanguageChange = language => {
+    this.setState({currentLanguage: language});
+    this.generateMnemonic();
+  };
+
   splashScreen() {
+    const {currentLanguage} = this.state;
+
     return (
       <div className="center">
         <h1 className="hide-on-print">Creating a new wallet</h1>
@@ -41,11 +57,17 @@ export default class CreateWallet extends React.Component {
         <p>
           You'll be asked to write down 24 words (you can also print the list).
         </p>
-        <p className="red">
-          <strong>ATTENTION:</strong> without these words (or your private key)
-          you won't be able to restore your wallet.
-          Please follow the instructions.
+
+        <h2 className="mt3 mb0">Select language</h2>
+
+        <p>
+          You can select the language for your recovery phrase.
         </p>
+
+        <div>
+          <LanguageButtons language={currentLanguage} onClick={this.handleLanguageChange} />
+        </div>
+
         <p className="submit-wrapper">
           <button className="button primary" onClick={this.handleStart}>Start</button>
         </p>
