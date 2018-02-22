@@ -82,7 +82,7 @@ export default class CreateWallet extends React.Component {
       case "splash":
         return this.splashScreen();
       case "show-words":
-        return <MnemonicPrintSheet goToScreen={this.goToScreen} mnemonic={mnemonic} privateKey={privateKey} />;
+        return <MnemonicPrintSheet onRefreshMnemonic={this.handleStart} goToScreen={this.goToScreen} mnemonic={mnemonic} privateKey={privateKey} />;
       case "confirm-words":
         return <ConfirmWords goToScreen={this.goToScreen} mnemonic={mnemonic} />;
       case "print-public-key":

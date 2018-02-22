@@ -13,6 +13,7 @@ export default class MnemonicPrintSheet extends React.Component {
   static propTypes = {
     goToScreen: PropTypes.func.isRequired,
     mnemonic: PropTypes.array.isRequired,
+    onRefreshMnemonic: PropTypes.func,
     privateKey: PropTypes.string.isRequired
   };
 
@@ -63,7 +64,7 @@ export default class MnemonicPrintSheet extends React.Component {
   };
 
   render() {
-    const {privateKey} = this.props;
+    const {privateKey, onRefreshMnemonic} = this.props;
 
     return (
       <div className="print-sheet mnemonic-print-sheet center">
@@ -89,6 +90,7 @@ export default class MnemonicPrintSheet extends React.Component {
 
         <p className="hide-on-print submit-wrapper">
           <PrintButton />
+          {onRefreshMnemonic && <button className="button secondary" onClick={onRefreshMnemonic}>Refresh list</button>}
           <button className="button primary" onClick={this.handleConfirmWords}>I wrote this list down</button>
         </p>
       </div>

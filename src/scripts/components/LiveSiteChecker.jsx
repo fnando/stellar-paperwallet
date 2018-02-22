@@ -22,7 +22,7 @@ export default class LiveSiteChecker extends React.Component {
     }
 
     return (
-      <div className="live-site center">
+      <div className="live-site center hide-on-print">
         <div>
           <div>
             You're running this paper wallet generator off of a live website.
