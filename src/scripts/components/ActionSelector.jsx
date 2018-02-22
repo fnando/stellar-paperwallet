@@ -34,7 +34,7 @@ export default class ActionSelector extends React.Component {
     );
   }
 
-  goToScreen = (screen) => {
+  goToScreen = screen => {
     this.setState({screen});
   };
 

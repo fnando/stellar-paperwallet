@@ -15,7 +15,7 @@ export default class ConfirmWord extends React.Component {
     word: PropTypes.string.isRequired
   };
 
-  handleOnChange = (event) => {
+  handleOnChange = event => {
     const confirmingWord = event.target.value;
     const {word} = this.props;
     const validConfirmation = confirmingWord === word;
@@ -38,7 +38,7 @@ export default class ConfirmWord extends React.Component {
     this.input.focus();
   }
 
-  handleKeyUp = (event) => {
+  handleKeyUp = event => {
     if (event.keyCode === ENTER) {
       this.handleNext();
     }

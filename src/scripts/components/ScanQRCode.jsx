@@ -20,7 +20,7 @@ export default class ScanQRCode extends React.Component {
     goToScreen: PropTypes.func.isRequired
   };
 
-  handleError = (error) => {
+  handleError = error => {
     if (!error) {
       return;
     }
@@ -30,7 +30,7 @@ export default class ScanQRCode extends React.Component {
     this.setState({error: message});
   };
 
-  handleScan = (privateKey) => {
+  handleScan = privateKey => {
     if (!privateKey) {
       return;
     }
@@ -52,7 +52,7 @@ export default class ScanQRCode extends React.Component {
   };
 
   splashScreen() {
-    const {error, privateKey, publicKey} = this.state;
+    const {error} = this.state;
     const errorMessage = error && <p className="error-message">{error}</p>;
 
     return (

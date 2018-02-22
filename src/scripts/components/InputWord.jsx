@@ -37,12 +37,12 @@ export default class InputWord extends React.Component {
     }
   };
 
-  handleOnChange = (event) => {
+  handleOnChange = event => {
     const value = event.target.value.trim().toLowerCase();
     this.setState({value});
   };
 
-  handleKeyUp = (event) => {
+  handleKeyUp = event => {
     if (event.keyCode === ENTER) {
       this.handleNext();
     }

@@ -71,7 +71,7 @@ export default class CreateWallet extends React.Component {
     );
   }
 
-  goToScreen = (screen) => {
+  goToScreen = screen => {
     this.setState({screen});
   };
 
