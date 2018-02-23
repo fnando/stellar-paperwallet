@@ -1,9 +1,29 @@
+@keyframes loading-hide {
+  from { zoom: scale(1); }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 .loading {
-  padding-top: 100px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .loading img {
   max-width: 300px;
   display: block;
   margin: 0 auto 50px;
+}
+
+.loading.hide {
+  animation: loading-hide 1s forwards;
 }

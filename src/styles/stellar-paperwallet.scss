@@ -13,6 +13,26 @@ body {
   margin: 0;
 }
 
+html,
+body,
+#root {
+  display: block;
+  min-height: 100vh;
+}
+
+.app {
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fade-in 1s forwards;
+}
+
 code {
   font-family: Hack, monospace;
 }
