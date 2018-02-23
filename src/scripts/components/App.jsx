@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import ActionSelector from "./ActionSelector";
 import AppHeader from "./AppHeader";
@@ -16,7 +17,7 @@ export default class App extends React.Component {
 
   render() {
     const {fadeIn} = this.state;
-    const className = fadeIn ? "app fade-in" : "app";
+    const className = classNames("app", {"fade-in": fadeIn});
 
     return (
       <div className={className}>
