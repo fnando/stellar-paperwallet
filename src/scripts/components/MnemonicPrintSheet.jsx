@@ -4,6 +4,7 @@ import QRCode from "qrcode.react";
 import chunk from "lodash/chunk";
 
 import PrintButton from "./PrintButton";
+import logoPrint from "../../images/logo-print-horizontal.svg";
 
 export default class MnemonicPrintSheet extends React.Component {
   state = {
@@ -67,32 +68,49 @@ export default class MnemonicPrintSheet extends React.Component {
     const {privateKey, onRefreshMnemonic} = this.props;
 
     return (
-      <div className="print-sheet mnemonic-print-sheet center">
-        <h1 className="hide-on-print">Recovery Phrase</h1>
-        <p className="hide-on-print">
-          The recovery phrase is how you can restore your private key
-          (the really important secret that must be kept as secure as possible).
+      <div>
+        <p className="show-on-print center mb3">
+          Print this in Letter or A4 paper.
+          <br/>
+          Store your paper wallet in a safe place (and put it on a ziplock-like bag).
         </p>
 
-        <h2 className="show-on-print">My Recovery Phrase</h2>
-
-        <div className="word-list small-on-print">
-          {this.renderWords()}
+        <div className="print-sheet mnemonic-print-sheet center show-on-print page-1">
+          <img className="logo" src={logoPrint} alt=""/>
+          <p>
+            This is your recovery phrase and private key.
+            <br/>
+            <strong className="red">Do not share it!</strong>
+          </p>
         </div>
 
-        <p className="qrcode show-on-print">
-          <QRCode value={privateKey} size={132} />
-        </p>
+        <div className="print-sheet mnemonic-print-sheet center">
+          <h1 className="hide-on-print">Recovery Phrase</h1>
+          <p className="hide-on-print">
+            The recovery phrase is how you can restore your private key
+            (the really important secret that must be kept as secure as possible).
+          </p>
 
-        <p className="show-on-print warning-message">
-          Store this document in a safe place
-        </p>
+          <h2 className="show-on-print">My Recovery Phrase</h2>
 
-        <p className="hide-on-print submit-wrapper">
-          <PrintButton />
-          {onRefreshMnemonic && <button className="button secondary" onClick={onRefreshMnemonic}>Refresh list</button>}
-          <button className="button primary" onClick={this.handleConfirmWords}>I wrote this list down</button>
-        </p>
+          <div className="word-list small-on-print">
+            {this.renderWords()}
+          </div>
+
+          <p className="qrcode show-on-print">
+            <QRCode value={privateKey} size={132} />
+          </p>
+
+          <p className="show-on-print warning-message">
+            Store this document in a safe place
+          </p>
+
+          <p className="hide-on-print submit-wrapper">
+            <PrintButton />
+            {onRefreshMnemonic && <button className="button secondary" onClick={onRefreshMnemonic}>Refresh list</button>}
+            <button className="button primary" onClick={this.handleConfirmWords}>I wrote this list down</button>
+          </p>
+        </div>
       </div>
     );
   }

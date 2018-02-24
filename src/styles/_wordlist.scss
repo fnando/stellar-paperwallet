@@ -1,0 +1,34 @@
+.word-list {
+  margin: 0 auto;
+  text-align: left;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.word-list .column {
+  width: 33%;
+}
+
+.word-list .column-item {
+  padding-right: 10px;
+}
+
+.word-list .column-item * {
+  font-size: 15px;
+}
+
+.word-list .number {
+  text-align: right;
+  display: inline-block;
+  width: 30px;
+  color: #aaa;
+  font-family: Hack, monospace;
+}
+
+.word-list .word {
+  color: #000;
+  font-weight: bold;
+  padding-left: 10px;
+}

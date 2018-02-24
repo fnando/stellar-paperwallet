@@ -8,16 +8,18 @@ import LiveSiteChecker from "./LiveSiteChecker";
 
 export default class App extends React.Component {
   state = {
-    fadeIn: false
+    fadeIn: false,
+    visible: false
   };
 
   componentDidMount() {
     setTimeout(() => this.setState({fadeIn: true}), 100);
+    setTimeout(() => this.setState({visible: true}), 1000);
   }
 
   render() {
-    const {fadeIn} = this.state;
-    const className = classNames("app", {"fade-in": fadeIn});
+    const {fadeIn, visible} = this.state;
+    const className = classNames("app", {"fade-in": fadeIn, visible: visible});
 
     return (
       <div className={className}>

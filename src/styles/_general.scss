@@ -1,0 +1,166 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  display: block;
+  min-height: 100vh;
+}
+
+.app {
+  opacity: 0;
+}
+
+.app.visible {
+  opacity: 1;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fade-in 1s forwards;
+}
+
+code {
+  font-family: Hack, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+  color: #666;
+
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #08b5e5;
+}
+
+.camera {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.error-message {
+  color: #ea3a42;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.panel {
+  margin-top: 50px;
+}
+
+.panel + .panel {
+  padding-top: 50px;
+  border-top: 1px solid #ccc;
+}
+
+.container {
+  padding: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input {
+  font-family: inherit;
+  border: 2px solid #ccc;
+  width: 100%;
+  font-size: 18px;
+  padding: 20px;
+
+  box-shadow: 6px 6px 0 #eee;
+}
+
+h1 {
+  color: #000;
+  line-height: 1.1;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+button + button {
+  margin-left: 15px;
+}
+
+.submit-wrapper {
+  border-top: 1px solid #d5d5d5;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.donation {
+  font-size: 13px;
+  background: #f9f9f9;
+  padding: 15px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.wallet-address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen {
+  .show-on-print {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .button + .button {
+    margin-top: 20px;
+  }
+
+  .word-list {
+    display: block;
+  }
+
+  .word-list .column {
+    width: 100%;
+  }
+
+  .camera {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  body,
+  .button {
+    font-size: 14px;
+  }
+}
