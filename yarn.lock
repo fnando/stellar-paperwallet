@@ -842,12 +842,6 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^4.7.16:
-  version "4.7.16"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-4.7.16.tgz#7a3995ad8c9eb5b4d0dd35febf170d0d1420262b"
-  dependencies:
-    core-js "^0.6.1"
-
 babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
@@ -1461,10 +1455,6 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
-core-js@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-0.6.1.tgz#1b4970873e8101bf8c435af095faa9024f4b9b58"
-
 core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
@@ -1485,7 +1475,7 @@ cosmiconfig@^5.0.0:
     js-yaml "^3.9.0"
     parse-json "^4.0.0"
 
-crc@^3.3.0:
+crc@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/crc/-/crc-3.5.0.tgz#98b8ba7d489665ba3979f59b21381374101a1964"
 
@@ -3190,15 +3180,13 @@ js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
 
-js-xdr@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/js-xdr/-/js-xdr-1.0.2.tgz#1af9c9c08a95b8c849056c77f12b5d7013de315c"
+js-xdr@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/js-xdr/-/js-xdr-1.0.4.tgz#a76e292ec3053f190dcd1dae9215274aae6a138d"
   dependencies:
-    babel-runtime "^4.7.16"
     cursor "^0.1.5"
-    lodash "^3.5.0"
+    lodash "^4.17.5"
     long "^2.2.3"
-    sequencify "0.0.7"
 
 js-yaml@^3.10.0, js-yaml@^3.9.1, js-yaml@~3.10.0:
   version "3.10.0"
@@ -3373,17 +3361,13 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^3.5.0:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+lodash@4.17.10, lodash@^4.17.10, lodash@^4.17.5:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 lodash@^4.0.0, lodash@^4.17.4, lodash@^4.3.0, lodash@~4.17.4:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
-
-lodash@^4.17.10, lodash@^4.17.5:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -5147,10 +5131,6 @@ send@0.16.2:
     range-parser "~1.2.0"
     statuses "~1.4.0"
 
-sequencify@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/sequencify/-/sequencify-0.0.7.tgz#90cff19d02e07027fd767f5ead3e7b95d1e7380c"
-
 serialize-to-js@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/serialize-to-js/-/serialize-to-js-1.1.1.tgz#4cd3a40a3d5f2d014625cb9283cdf990800228f5"
@@ -5407,27 +5387,28 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-stellar-base@0.7.7, stellar-base@^0.7.6:
-  version "0.7.7"
-  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-0.7.7.tgz#de8b55f0d60097d40b25b0d1aa6fe9e078ea1f7c"
+stellar-base@0.8.3, stellar-base@^0.8.2:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/stellar-base/-/stellar-base-0.8.3.tgz#0403a538fdb5e7e247bb23e64eeabfa754323f72"
   dependencies:
     base32.js "~0.1.0"
     bignumber.js "^4.0.0"
-    crc "^3.3.0"
-    js-xdr "^1.0.0"
-    lodash "^4.17.4"
+    crc "3.5.0"
+    js-xdr "^1.0.4"
+    lodash "^4.17.10"
     sha.js "^2.3.6"
-    tweetnacl "^0.14.5"
+    tweetnacl "^1.0.0"
   optionalDependencies:
     ed25519 "0.0.4"
 
-stellar-hd-wallet@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/stellar-hd-wallet/-/stellar-hd-wallet-0.0.4.tgz#e4f251031ec2a6caa81d45eb520b3349a027ca77"
+stellar-hd-wallet@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/stellar-hd-wallet/-/stellar-hd-wallet-0.0.8.tgz#e339c45e9ab0bd5b157d86f74eadc7fac8668723"
   dependencies:
     bip39 "^2.5.0"
     ed25519-hd-key "^0.5.0"
-    stellar-base "^0.7.6"
+    lodash "4.17.10"
+    stellar-base "^0.8.2"
 
 stream-browserify@^2.0.1:
   version "2.0.1"
@@ -5736,9 +5717,13 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tweetnacl@^0.14.3, tweetnacl@^0.14.5, tweetnacl@~0.14.0:
+tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
+
+tweetnacl@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.0.tgz#713d8b818da42068740bf68386d0479e66fc8a7b"
 
 type-check@~0.3.2:
   version "0.3.2"

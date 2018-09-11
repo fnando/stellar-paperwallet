@@ -23,8 +23,8 @@
     "react": "16.5.0",
     "react-dom": "16.5.0",
     "react-qr-reader": "2.1.0",
-    "stellar-base": "0.7.7",
-    "stellar-hd-wallet": "0.0.4",
+    "stellar-base": "0.8.3",
+    "stellar-hd-wallet": "0.0.8",
     "unorm": "1.4.1"
   }
 }
