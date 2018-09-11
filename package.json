@@ -17,7 +17,7 @@
     "eslint": "5.5.0",
     "eslint-plugin-react": "7.11.1",
     "node-sass": "4.9.3",
-    "parcel-bundler": "1.6.1",
+    "parcel-bundler": "1.9.7",
     "parcel-plugin-eslint": "1.0.4",
     "qrcode.react": "0.7.2",
     "react": "16.2.0",
