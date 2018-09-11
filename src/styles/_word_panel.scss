@@ -1,0 +1,48 @@
+.word-panel {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 170px;
+}
+
+.word-panel button:last-of-type {
+  margin-right: 0;
+}
+
+.word-panel button + button {
+  margin-left: 0;
+}
+
+.confirmed-words {
+  background: #f9f9f9;
+}
+
+.confirmed-words .word-button {
+  background: #bbb;
+  color: #fff;
+}
+
+.available-words .word-button {
+  background: #eee;
+  color: #333;
+}
+
+.available-words .word-button:disabled {
+  color: #aaa;
+  cursor: default;
+}
+
+.word-button {
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import ConfirmWord from "./ConfirmWord";
 import isLastItem from "../utils/isLastItem";
 
 export default class ConfirmWords extends React.Component {
   state = {
+    confirmedMnemonic: [],
     index: 0,
+    randomMnemonic: null,
     screen: "confirm-word"
   };
 
@@ -15,25 +16,75 @@ export default class ConfirmWords extends React.Component {
     mnemonic: PropTypes.array.isRequired
   };
 
-  handleConfirmation = () => {
-    let {index} = this.state;
-    const {mnemonic} = this.props;
-
-    if (isLastItem(mnemonic, index)) {
-      this.setState({screen: "confirmation-complete"});
-    } else {
-      index += 1;
-      this.setState({index});
+  static getDerivedStateFromProps(props, state) {
+    if (!state.randomMnemonic) {
+      const mnemonic = props.mnemonic.map((word, index) => ({word, index}));
+      const randomMnemonic = mnemonic.slice(0);
+      randomMnemonic.sort(() => Math.random());
+      state = {...state, mnemonic, randomMnemonic};
     }
+
+    return state;
+  };
+
+  handleNext = () => {
+    this.setState({screen: "confirmation-complete"});
+  };
+
+  handleClearWords = () => {
+    this.setState({confirmedMnemonic: []});
+  };
+
+  validMnemonicConfirmation() {
+    const {mnemonic, confirmedMnemonic} = this.state;
+
+    const recoveryPhrase = mnemonic.map(({word}) => word).join(" ");
+    const confirmedRecoveryPhrase = confirmedMnemonic.map(({word}) => word).join(" ");
+
+    return recoveryPhrase === confirmedRecoveryPhrase;
   }
 
   confirmWordScreen() {
-    const {mnemonic} = this.props;
-    const {index} = this.state;
-    const word = mnemonic[index];
+    const {mnemonic, randomMnemonic, confirmedMnemonic} = this.state;
+    const indexesInUse = confirmedMnemonic.map(({index}) => index);
+    const mnemonicMatches = this.validMnemonicConfirmation();
 
-    return <ConfirmWord word={word} index={index} onConfirmation={this.handleConfirmation} />;
+    return (
+      <div className="center">
+        <h1>Let's verify your recovery phrase.</h1>
+        <h2>Please select each word in the correct order.</h2>
+
+        <div className="word-panel available-words">
+          <div>
+            {randomMnemonic.map(item => <button disabled={indexesInUse.includes(item.index)} className="word-button" onClick={() => this.handleAddWord(item)} key={item.index}>{item.word}</button>)}
+          </div>
+        </div>
+
+        <div className="word-panel confirmed-words">
+          <div>
+            {confirmedMnemonic.map(item => <button className="word-button" onClick={() => this.handleRemoveWord(item)} key={item.index}>{item.word}</button>)}
+          </div>
+        </div>
+
+        <p className="submit-wrapper">
+          <button className="button secondary" onClick={this.handleClearWords}>Clear Words</button>
+          <button className="button primary" disabled={!mnemonicMatches} onClick={this.handleNext}>Continue</button>
+        </p>
+      </div>
+    );
   }
+
+  handleAddWord = (item) => {
+    const {confirmedMnemonic} = this.state;
+    confirmedMnemonic.push(item);
+    this.setState({confirmedMnemonic});
+  };
+
+  handleRemoveWord = (item) => {
+    let {confirmedMnemonic} = this.state;
+    confirmedMnemonic = confirmedMnemonic.filter(({index}) => index !== item.index);
+    this.setState({confirmedMnemonic});
+  };
 
   handlePrintPublicKey = () => {
     const {goToScreen} = this.props;
