@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "parcel watch src/index.html --public-url './' --out-file index.html",
     "serve": "parcel src/index.html --out-file index.html",
-    "build": "parcel build src/index.html --public-url './' --out-file index.html"
+    "dist": "parcel build src/index.html --public-url './' --out-file index.html"
   },
   "devDependencies": {
     "babel-eslint": "9.0.0",
@@ -14,16 +14,16 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "classnames": "2.2.6",
-    "eslint": "5.5.0",
+    "eslint": "5.6.0",
     "eslint-plugin-react": "7.11.1",
     "node-sass": "4.9.3",
-    "parcel-bundler": "1.6.1",
+    "parcel-bundler": "1.9.7",
     "parcel-plugin-eslint": "1.0.4",
     "qrcode.react": "0.8.0",
-    "react": "16.5.0",
-    "react-dom": "16.5.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
     "react-qr-reader": "2.1.0",
-    "stellar-base": "0.8.3",
+    "stellar-base": "0.9.0",
     "stellar-hd-wallet": "0.0.8",
     "unorm": "1.4.1"
   }
