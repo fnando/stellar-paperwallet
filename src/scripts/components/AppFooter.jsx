@@ -12,7 +12,7 @@ export default class AppFooter extends React.Component {
         </p>
 
         <p className="wallet-address">
-          <Key value="GBXPSW6DAQGOZTSKGEZ7SMGABMSUZ24OGX4JOIW4ZYQSII5DNHTN6JDZ" />
+          <Key value="GDGBXOPPXJZH3JVKIBK6Z4RNSAZ4QNLQVAB3JYBU3K3BCR4NEFVNANDO" />
         </p>
 
         <p className="center">
