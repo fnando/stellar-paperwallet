@@ -1,6 +1,6 @@
 {
   "name": "stellar-paperwallet",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "scripts": {
     "watch": "parcel watch src/index.html --public-url './' --out-file index.html",
