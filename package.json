@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "parcel watch src/index.html --public-url './' --out-file index.html",
     "serve": "parcel src/index.html --out-file index.html",
-    "dist": "parcel build src/index.html --public-url './' --out-file index.html"
+    "dist": "rm -rf dist && parcel build src/index.html --public-url './' --out-file index.html"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
